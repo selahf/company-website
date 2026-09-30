@@ -1,12 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 def home_page_view(request):
-    """
-    Whenever this function is called, return text that says "Hello,
-    World!"
-    
-    This is a function-based view: it returns a view from a function.
-    """
-    return HttpResponse("Hello, World!")
+    context = {
+        "inventory_list": ["Widget 1", "Widget 2", "Widget 3"],
+        "greeting": "THAnk you FOR visitING.",
+    }
+    return render(request, "home.html", context)
 
+class AboutPageView(TemplateView):
+    template_name = "about.html"
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["contact_address"] = "123 Main Street"
+        context["phone_number"] = "555-555-5555"
+        return context
