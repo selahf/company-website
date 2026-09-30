@@ -20,6 +20,8 @@ This is a project connected to Chapter 3 of the Django textbook.
 The commits associated with this assignment were:
 ```
 Adding company website initial commit
+Adding products page
+Updating README
 ```
 
 ## Hello World
