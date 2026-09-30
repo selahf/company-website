@@ -1,0 +1,11 @@
+<!-- templates/products.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Company Products Page</h1>
+<p>Our newest product is the {{ new_product }} and our bestselling 
+    product is the {{ best_seller }}. The product that we have on
+    sale this week is the {{ on_sale }}. Based on your previous
+    shopping, we think that you might like our {{ for_you }}.
+</p>
+{% endblock %}
